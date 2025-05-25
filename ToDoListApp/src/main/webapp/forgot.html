@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css" />
+ 
+    
+</head>
+<body>
+
+<div class="navbar">
+    <a href="Login.html">Login</a>
+    <a href="register.html">Register</a>
+     
+  </div>
+
+<form onsubmit="return validateForm()" method="post" action="forgot">
+  <h2>Reset Password</h2>
+
+   
+
+  <label>Email:</label>
+  <input type="email" name="email" id="email" required>
+
+
+  <label>Password:</label>
+  <input type="password" name="pwd" id="pwd" required minlength="8">
+
+  <label>Confirm Password:</label>
+  <input type="password" name="cpwd" id="cpwd" required>
+
+  <div id="error" class="error"></div>
+
+  <input type="submit" value="Reset Your password">
+</form>
+
+<script>
+function validateForm() {
+  const email = document.getElementById("email").value;
+  const pwd = document.getElementById("pwd").value;
+  const cpwd = document.getElementById("cpwd").value;
+  const errorDiv = document.getElementById("error");
+
+  errorDiv.innerHTML = ""; // clear old errors
+
+  if (!email.endsWith("@gmail.com")) {
+    errorDiv.innerHTML = "Email must be in the format of @gmail.com";
+    return false;
+  }
+
+
+  if (pwd.length < 8) {
+    errorDiv.innerHTML = "Password must be at least 8 characters";
+    return false;
+  }
+
+  if (pwd !== cpwd) {
+    errorDiv.innerHTML = "Passwords do not match";
+    return false;
+  }
+
+  return true; // all validations passed
+}
+</script>
+
+</body>
+</html>

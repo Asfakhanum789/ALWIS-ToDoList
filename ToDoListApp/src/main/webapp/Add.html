@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="navbar">
+     
+     
+    <a href="dashboard.jsp">Todo List</a>
+    <a href="profile.html">Profile</a>
+    <a href="LogoutServlet.java">Logout</a>
+  </div>
+ 
+ 
+    <form action="AddTodoServlet" method="post">
+    <h2>Add New Todo</h2>
+        Title: <input type="text" name="title" required><br><br>
+        Description: <input type="text" name="description"><br><br>
+        Due Date: <input type="date" name="dueDate"><br><br>
+        <input type="submit" value="Add Todo">
+    </form>
+ 
+</body>
+</html>

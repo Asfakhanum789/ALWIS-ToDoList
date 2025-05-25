@@ -1,0 +1,136 @@
+/* Base styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #3498db;
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #f1c40f;
+    border-radius: 4px;
+}
+
+/* Headings */
+h2 {
+	color:#3498db;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+hr {
+    margin: 20px auto;
+    width: 80%;
+    border: 1px solid #ccc;
+}
+
+/* Button styling */
+button {
+    margin: 10px auto;
+    display: block;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button:hover {
+    background-color: #d4ac0d;
+}
+
+/* Form Styling */
+form {
+    width: 60%;
+    margin: 0 auto 20px auto;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="submit"],
+input[type="radio"] {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Table Styling */
+table {
+    width: 60%;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: white;
+    color: #3498db;
+    font-weight: bold;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+td form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table, form {
+        width: 95%;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
