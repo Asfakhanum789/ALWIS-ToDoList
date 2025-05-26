@@ -45,7 +45,7 @@ function validateForm() {
   const cpwd = document.getElementById("cpwd").value;
   const errorDiv = document.getElementById("error");
 
-  errorDiv.innerHTML = ""; // clear old errors
+  errorDiv.innerHTML = ""; 
 
   if (!email.endsWith("@gmail.com")) {
     errorDiv.innerHTML = "Email must be in the format of @gmail.com";
@@ -67,7 +67,7 @@ function validateForm() {
     return false;
   }
 
-  return true; // all validations passed
+  return true;
 }
 </script>
 
