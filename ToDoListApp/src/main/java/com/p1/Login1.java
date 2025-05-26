@@ -37,7 +37,7 @@ public class Login1 extends HttpServlet {
 
            
            pstmt.setString(1, email);
-           pstmt.setString(2, password); // NOTE: Hashing recommended
+           pstmt.setString(2, password); 
 
            ResultSet res = pstmt.executeQuery();
 
