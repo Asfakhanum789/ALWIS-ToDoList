@@ -25,10 +25,7 @@ public class forgot extends HttpServlet {
 	          
 	        
 	        try {
-	           /* Class.forName("com.mysql.cj.jdbc.Driver");
-	            Connection con = DriverManager.getConnection(
-	                "jdbc:mysql://localhost:3306/ToDoList", "root", "Asfakhanum@2002"
-	            );*/
+	           
 	        	 Connection con=Database.getconnection();
 
 	            PreparedStatement pstmt = con.prepareStatement(
@@ -38,7 +35,7 @@ public class forgot extends HttpServlet {
 	   
 	            pstmt.setString(1, password);
 	      
-	            pstmt.setString(2,email); // NOTE: Hashing recommended
+	            pstmt.setString(2,email); 
 
 	            int x = pstmt.executeUpdate();
 
