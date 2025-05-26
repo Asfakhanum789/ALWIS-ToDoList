@@ -21,9 +21,7 @@ public class status extends HttpServlet {
         boolean status = "true".equalsIgnoreCase(statusParam);
 
         try {
-           /* Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ToDoList", "root", "Asfakhanum@2002");
-*/
+          
         	 Connection con=Database.getconnection();
             PreparedStatement pstmt = con.prepareStatement("UPDATE todos SET status=? WHERE id=?");
             pstmt.setBoolean(1, status);
