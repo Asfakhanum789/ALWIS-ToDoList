@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.*" %>
@@ -20,24 +20,31 @@ String sort=request.getParameter("sort");
 %>
 
 <html>
-<head><title>Your Dashboard</title></head>
+<head><title>Your Dashboard</title>
+<link rel="stylesheet" href="style1.css" />
+</head>
 <body>
-    <h2>Add New Todo</h2>
-    <form action="AddTodoServlet" method="post">
-        Title: <input type="text" name="title" required><br>
-        Description: <input type="text" name="description"><br>
-        Due Date: <input type="date" name="dueDate"><br>
-        <input type="submit" value="Add Todo">
-    </form>
 
+<div class="navbar">
+    <a href="Login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="dashboard.html">Todo List</a>
+    <a href="profile.html">Profile</a>
+    <a href="LogoutServlet">Logout</a>
+  </div>
+     
+      
+       <h2>Your Todo List</h2>
     <hr>
 
-    <h2>Your Todo List</h2>
-    <form action="LogoutServlet" method="get">
-    <input type="submit" value="logout">
-    </form>
     
-   <h3>Filter and Sort Todos</h3>
+    <button><a href="Add.html">Add Todo</a> 
+    </button> 
+    
+    <br><br>
+    
+    
+    
 <form method="get" action="dashboard.jsp">
     Show:
     <input type="radio" name="filter" value="all" <%= "all".equals(request.getParameter("filter")) || request.getParameter("filter") == null ? "checked" : "" %>> All
@@ -51,6 +58,7 @@ String sort=request.getParameter("sort");
     <input type="submit" value="Apply">
 </form>
 <hr>
+
     
     <table border="1">
         <tr>
@@ -108,7 +116,7 @@ String sort=request.getParameter("sort");
 
                 <form action="editTodo.jsp" method="get" style="display:inline;">
                     <input type="hidden" name="id" value="<%= rs.getInt("id") %>">
-                    <input type="submit" value="Update">
+                    <input type="submit" value="Edit">
                 </form>
             </td>
         </tr>
@@ -123,5 +131,6 @@ String sort=request.getParameter("sort");
     }
 %>
     </table>
+    
 </body>
 </html>
